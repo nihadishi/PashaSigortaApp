@@ -26,6 +26,7 @@ import CoinsScreen from '../Pages/MainScreens/CoinsScreen/CoinsScreen';
 import SettingScreen from '../Pages/MainScreens/SettingScreen/SettingScreen';
 import FavScreen from '../Pages/MainScreens/FavScreen/FavScreen';
 import DetectScreen from '../Pages/MainScreens/DetectScreen/DetectScreen';
+import SelectScreen from '../Pages/MainScreens/DetectScreen/SelectScreen';
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
@@ -53,6 +54,10 @@ const Routes = () => {
     {
       name: 'DetectScreen',
       component: DetectScreen,
+    },
+    {
+      name: 'SelectScreen',
+      component: SelectScreen,
     },
     {
       name: 'RecentScreen',

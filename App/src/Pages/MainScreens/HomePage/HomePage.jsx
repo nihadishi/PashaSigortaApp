@@ -32,7 +32,7 @@ const HomePage = ({navigation}) => {
                 }}>
                 <MenuSvg />
               </TouchableHighlight>
-              <Text style={styles.headerText}>Phaster</Text>
+              <Text style={styles.headerText}>Paşa Sığorta</Text>
               <TouchableHighlight
                 underlayColor="transparent"
                 onPress={() => {
@@ -43,7 +43,7 @@ const HomePage = ({navigation}) => {
             </View>
             <ScrollView style={{height: screenHeight - 109}}>
               <View style={styles.topServices}>
-                <Text style={styles.serviceText}>Popular</Text>
+                <Text style={styles.serviceText}>Seç:</Text>
                 
                 <View style={styles.serviceItems}>
                   <TouchableHighlight
@@ -58,7 +58,7 @@ const HomePage = ({navigation}) => {
                   </TouchableHighlight>
                  
                   <TouchableHighlight
-                    onPress={() => {}}
+                    onPress={() => {navigation.navigate("SelectScreen")}}
                     underlayColor="#014370"
                     style={styles.serviceItem}>
                     <Image
@@ -73,7 +73,7 @@ const HomePage = ({navigation}) => {
                   onPress={() => {
                     navigation.navigate('ServiceScreen');
                   }}>
-                  <Text style={styles.moreServices}>More...</Text>
+                  <Text style={styles.moreServices}>Sığortalar...</Text>
                 </TouchableHighlight>
               </View>
             </ScrollView>
