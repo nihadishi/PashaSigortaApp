@@ -1,7 +1,12 @@
 import {View, Text, StyleSheet,TouchableOpacity,Image} from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const ResultScreen = () => {
+    const navigation = useNavigation();
+    const handleNextPress = () => {
+      navigation.navigate('DamageScreen');
+    };
   return (
     <View style={styles.container}>
       {/* <Text style={styles.title}>Seçiminiz</Text> */}
@@ -18,7 +23,7 @@ const ResultScreen = () => {
         }}>
         <TouchableOpacity
           style={styles.buttonContainer}
-        //   onPress={handleNextPress}
+          onPress={handleNextPress}
           >
           <View style={styles.buttonInnerContainer}>
             <Text style={styles.buttonText}>Növbəti</Text>
