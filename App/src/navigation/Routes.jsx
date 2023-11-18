@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {TransitionPresets} from '@react-navigation/stack';
 import LoginPage from '../Pages/InitialScreens/LoginPage/LoginPage';
 import SignupPageStep1 from '../Pages/InitialScreens/SignupPage/SignupPageStep1';
 import SignupPageStep2 from '../Pages/InitialScreens/SignupPage/SignupPageStep2';
@@ -16,8 +15,6 @@ import RecentPage from '../Pages/MainScreens/RecentPage/RecentPage';
 import ServicePage from '../Pages/MainScreens/ServicePage/ServicePage';
 import ProfilePage from '../Pages/MainScreens/ProfilePage/ProfilePage';
 import {useLoginContext} from '../assets/contexts/LoginContext';
-import Footer from '../layouts/Footer/Footer';
-import {View, ScrollView, StyleSheet} from 'react-native';
 import Menu from '../layouts/Menu/Menu';
 import Notifications from '../layouts/Notifications/Notifications';
 import AboutScreen from '../Pages/MainScreens/AboutScreen/AboutScreen';
@@ -27,6 +24,8 @@ import SettingScreen from '../Pages/MainScreens/SettingScreen/SettingScreen';
 import FavScreen from '../Pages/MainScreens/FavScreen/FavScreen';
 import DetectScreen from '../Pages/MainScreens/DetectScreen/DetectScreen';
 import SelectScreen from '../Pages/MainScreens/DetectScreen/SelectScreen';
+import AnalyzeScreen from '../Pages/MainScreens/DetectScreen/AnalyzeScreen';
+import ResultScreen from '../Pages/MainScreens/DetectScreen/ResultScreen';
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
@@ -58,6 +57,14 @@ const Routes = () => {
     {
       name: 'SelectScreen',
       component: SelectScreen,
+    },
+    {
+      name: 'AnalyzeScreen',
+      component: AnalyzeScreen,
+    },
+    {
+      name: 'ResultScreen',
+      component: ResultScreen,
     },
     {
       name: 'RecentScreen',

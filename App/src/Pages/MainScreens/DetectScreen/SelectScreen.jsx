@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {
   View,
@@ -10,7 +11,12 @@ import {
 import {launchImageLibrary} from 'react-native-image-picker';
 
 const SelectScreen = () => {
+  const navigation = useNavigation();
   const [selectedImage, setSelectedImage] = useState(null);
+  const handleNextPress = () => {
+    navigation.navigate('AnalyzeScreen', {selectedImage});
+  };
+
   const handleSelectImage = () => {
     const options = {
       title: 'Select Image',
@@ -28,8 +34,7 @@ const SelectScreen = () => {
       } else if (response.customButton) {
         console.log('User tapped custom button: ', response.customButton);
       } else {
-        // Seçilen fotoğrafın yolunu state'e kaydet
-        setSelectedImage(response);
+        setSelectedImage(response.assets[0].uri);
       }
     });
   };
@@ -37,31 +42,30 @@ const SelectScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Seçiminiz</Text>
-
-      {selectedImage && (
-        <TouchableOpacity onPress={handleSelectImage}>
+      {selectedImage ? (
+        <>
+         <TouchableOpacity onPress={handleSelectImage}>
           <Image
-            source={{uri: selectedImage.assets[0].uri}}
+            source={{uri: selectedImage}}
             resizeMode="contain"
             style={styles.selectedImage}
           />
-          {console.log(selectedImage.assets[0].uri)}
         </TouchableOpacity>
-      )}
-
-      {selectedImage ? (
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
             width: 300,
           }}>
-          <TouchableOpacity style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleNextPress}>
             <View style={styles.buttonInnerContainer}>
               <Text style={styles.buttonText}>Növbəti</Text>
             </View>
           </TouchableOpacity>
         </View>
+        </>
       ) : (
         <>
           <TouchableOpacity style={styles.button} onPress={handleSelectImage}>
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor:"#296D84"
+    backgroundColor: '#296D84',
   },
   title: {
     fontSize: 24,
@@ -105,7 +109,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   buttonContainer: {
-    marginTop:52,
+    marginTop: 52,
     width: 345,
     height: 38,
     paddingTop: 6,

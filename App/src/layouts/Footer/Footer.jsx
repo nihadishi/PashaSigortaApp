@@ -56,12 +56,12 @@ const Footer = (value) => {
         <Text style={select===3? styles.footerTextSelected : styles.footerText}>Tarixçə </Text>
       </View>
       </TouchableHighlight>
-      <TouchableHighlight underlayColor="transparent" onPress={()=>{navigation.navigate("ServiceScreen")}}>
+      {/* <TouchableHighlight underlayColor="transparent" onPress={()=>{navigation.navigate("ServiceScreen")}}>
       <View style={styles.items}>
         <View style={styles.svg}>{select===4 ? <ServiceSelected width={25} height={25} fill={'red'} />:<Service width={25} height={25} fill={'red'} />}</View>
         <Text style={select===4? styles.footerTextSelected : styles.footerText}>Xidmətlər</Text>
       </View>
-      </TouchableHighlight>
+      </TouchableHighlight> */}
       <TouchableHighlight underlayColor="transparent" onPress={()=>{navigation.navigate("ProfileScreen")}}>
       <View style={styles.items}>
         <View style={styles.svg}>{select===5? <ProfileSelected width={25} height={25} fill={'red'} />:<Profile width={25} height={25} fill={'red'} />}</View>

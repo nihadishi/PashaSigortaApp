@@ -13,7 +13,12 @@ import {
 import {useCameraDevice, Camera} from 'react-native-vision-camera';
 import {useNavigation} from '@react-navigation/native';
 const DetectScreen = () => {
+    const navigation = useNavigation();
   const [selectedImage, setSelectedImage] = useState(null);
+  const handleNextPress = () => {
+    navigation.navigate('AnalyzeScreen', {selectedImage });
+  };
+
   async function requestCameraPermission() {
     try {
       const granted = await PermissionsAndroid.request(
@@ -38,7 +43,6 @@ const DetectScreen = () => {
   useEffect(() => {
     requestCameraPermission();
   }, []);
-  const navigation = useNavigation();
   const device = useCameraDevice('back');
   const camera = useRef(null);
   if (device == null) return <ActivityIndicator />;
@@ -47,8 +51,7 @@ const DetectScreen = () => {
       const photo = await camera.current.takePhoto({
         flash: 'on',
       });
-      setSelectedImage(photo.path);
-      console.log(photo.path);
+      setSelectedImage( 'file://' + photo.path);
     }
   };
   return !selectedImage ? (
@@ -88,7 +91,7 @@ const DetectScreen = () => {
           <>
           <TouchableOpacity onPress={()=>{setSelectedImage(null)}}>
             <Image
-              source={{uri: 'file://' + selectedImage}}
+              source={{uri: selectedImage}}
               resizeMode="contain"
               style={styles.selectedImage}
             />
@@ -99,7 +102,7 @@ const DetectScreen = () => {
                 justifyContent: 'space-around',
                 width: 300,
               }}>
-              <TouchableOpacity style={styles.buttonContainer}>
+              <TouchableOpacity style={styles.buttonContainer} onPress={handleNextPress}>
                 <View style={styles.buttonInnerContainer}>
                   <Text style={styles.buttonText}>Növbəti</Text>
                 </View>
