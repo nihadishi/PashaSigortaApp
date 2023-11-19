@@ -1,8 +1,10 @@
 import { View, Text, TouchableOpacity, StyleSheet,Image } from 'react-native';
 import React from 'react'
 import LinearGradient from 'react-native-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 const DamageScreen = () => {
+    const navigation = useNavigation();
   return (
     <View style={styles.main}>
       <View style={styles.header}>
@@ -76,7 +78,7 @@ const DamageScreen = () => {
       </View>
     </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate("AreyousureScreen")}}>
         <Text style={styles.buttonText}>Növbəti</Text>
       </TouchableOpacity>
     </View>

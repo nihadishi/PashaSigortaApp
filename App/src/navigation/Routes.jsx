@@ -27,6 +27,8 @@ import SelectScreen from '../Pages/MainScreens/DetectScreen/SelectScreen';
 import AnalyzeScreen from '../Pages/MainScreens/DetectScreen/AnalyzeScreen';
 import ResultScreen from '../Pages/MainScreens/DetectScreen/ResultScreen';
 import DamageScreen from '../Pages/MainScreens/DetectScreen/DamageScreen';
+import AreyousureScreen from '../Pages/MainScreens/DetectScreen/AreyousureScreen';
+import SuccessScreen from '../Pages/MainScreens/DetectScreen/SuccessScreen';
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
@@ -70,6 +72,14 @@ const Routes = () => {
     {
       name: 'ResultScreen',
       component: ResultScreen,
+    },
+    {
+      name: 'AreyousureScreen',
+      component: AreyousureScreen,
+    },
+    {
+      name: 'SuccessScreen',
+      component: SuccessScreen,
     },
     {
       name: 'RecentScreen',
