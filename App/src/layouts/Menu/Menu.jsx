@@ -47,7 +47,7 @@ const Menu = () => {
                 <Text style={styles.itemText}>Profile</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight
+            {/* <TouchableHighlight
               underlayColor="transparent"
               onPress={() => {
                 setmenuIsOpen(false);
@@ -58,7 +58,7 @@ const Menu = () => {
                 <CoinSvg width={25} height={25} />
                 <Text style={styles.itemText}>My Skills</Text>
               </View>
-            </TouchableHighlight>
+            </TouchableHighlight> */}
             <TouchableHighlight
               underlayColor="transparent"
               onPress={() => {
@@ -71,7 +71,7 @@ const Menu = () => {
                 <Text style={styles.itemText}>Settings</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight
+            {/* <TouchableHighlight
               underlayColor="transparent"
               onPress={() => {
                 setmenuIsOpen(false);
@@ -82,12 +82,12 @@ const Menu = () => {
                 <FavoriuteSvg width={25} height={25} />
                 <Text style={styles.itemText}>Liked Jobs</Text>
               </View>
-            </TouchableHighlight>
+            </TouchableHighlight> */}
             <TouchableHighlight
               underlayColor="transparent"
               onPress={() => {
                 setmenuIsOpen(false);
-                navigation.navigate("AboutScreen");
+                // navigation.navigate("AboutScreen");
               }}
               style={{width: 'auto'}}>
               <View style={styles.item}>
@@ -99,7 +99,7 @@ const Menu = () => {
               underlayColor="transparent"
               onPress={() => {
                 setmenuIsOpen(false);
-                navigation.navigate("SupportScreen");
+                // navigation.navigate("SupportScreen");
               }}
               style={{width: 'auto'}}>
               <View style={styles.item}>

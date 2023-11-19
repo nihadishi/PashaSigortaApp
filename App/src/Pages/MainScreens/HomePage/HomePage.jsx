@@ -43,7 +43,7 @@ const HomePage = ({navigation}) => {
             </View>
             <ScrollView style={{height: screenHeight - 109}}>
               <View style={styles.topServices}>
-                <Text style={styles.serviceText}>Seç:</Text>
+                <Text style={styles.serviceText}>Xidməti seçin:</Text>
                 
                 <View style={styles.serviceItems}>
                   <TouchableHighlight
@@ -68,13 +68,6 @@ const HomePage = ({navigation}) => {
                     />
                   </TouchableHighlight>
                 </View>
-                <TouchableHighlight
-                  underlayColor="transparent"
-                  onPress={() => {
-                    navigation.navigate('ServiceScreen');
-                  }}>
-                  <Text style={styles.moreServices}>Sığortalar...</Text>
-                </TouchableHighlight>
               </View>
             </ScrollView>
           </View>

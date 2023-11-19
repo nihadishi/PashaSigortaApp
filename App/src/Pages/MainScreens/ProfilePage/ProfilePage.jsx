@@ -60,36 +60,47 @@ const ProfilePage = ({navigation}) => {
           </View>
           <View style={styles.items}>
             <View style={styles.item}>
-              <Text style={styles.itemHeader}>Name</Text>
+              <Text style={styles.itemHeader}>Ad</Text>
               <Text style={styles.itemName}>{userData.name}</Text>
             </View>
             <View style={styles.item}>
-              <Text style={styles.itemHeader}>Surname</Text>
+              <Text style={styles.itemHeader}>Soyad</Text>
               <Text style={styles.itemName}>{userData.surname}</Text>
             </View>
             <View style={styles.item}>
-              <Text style={styles.itemHeader}>Speciality</Text>
-              <Text style={styles.itemName}>{userData.speciality}</Text>
+              <Text style={styles.itemHeader}>Ş.V Seriya nömrəsi</Text>
+              <Text style={styles.itemName}>AA765423</Text>
             </View>
             <View style={styles.item}>
-              <Text style={styles.itemHeader}>Region</Text>
-              <Text style={styles.itemName}>🇦🇿 Azerbaijan</Text>
+              <Text style={styles.itemHeader}>Ş.V FİN Kod</Text>
+              <Text style={styles.itemName}>2KH8DF5</Text>
             </View>
             <View style={styles.item}>
-              <Text style={styles.itemHeader}>Number</Text>
+              <Text style={styles.itemHeader}>Avtomobil Modeli</Text>
+              <Text style={styles.itemName}>Hyundai Sonata (2021)</Text>
+            </View>
+            <View style={styles.item}>
+              <Text style={styles.itemHeader}>Qeydiyyat Nişanı</Text>
+              <Text style={styles.itemName}>🇦🇿10 - AA - 123</Text>
+            </View>
+            <View style={styles.item}>
+              <Text style={styles.itemHeader}>Sığorta tarixi</Text>
+              <Text style={styles.itemName}>21/02/2021</Text>
+            </View>
+            <View style={styles.item}>
+              <Text style={styles.itemHeader}>Sığorta növü</Text>
+              <Text style={styles.itemName}>KASKO</Text>
+            </View>
+            <View style={styles.item}>
+              <Text style={styles.itemHeader}>Əlaqə nömrəsi</Text>
               <Text style={styles.itemName}>{'+994' + userData.number}</Text>
             </View>
             <View style={styles.item}>
               <Text style={styles.itemHeader}>E-mail</Text>
               <Text style={styles.itemName}>{userData.email}</Text>
             </View>
-
             <View style={styles.item}>
-              <Text style={styles.itemHeader}>Gender</Text>
-              <Text style={styles.itemName}>{userData.gender}</Text>
-            </View>
-            <View style={styles.item}>
-              <Text style={styles.itemHeader}>Birth date</Text>
+              <Text style={styles.itemHeader}>Doğum tarixi</Text>
               <Text style={styles.itemName}>
                 {userData.birthDate?.toLocaleDateString()}
               </Text>

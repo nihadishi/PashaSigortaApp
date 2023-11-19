@@ -50,12 +50,12 @@ const Footer = (value) => {
         <Text style={select===1? styles.footerTextSelected : styles.footerText}>Əsas</Text>
       </View>
       </TouchableHighlight>
-      <TouchableHighlight underlayColor="transparent" onPress={()=>{navigation.navigate("RecentScreen")}}>
+      {/* <TouchableHighlight underlayColor="transparent" onPress={()=>{navigation.navigate("RecentScreen")}}>
       <View style={styles.items}>
         <View style={styles.svg}>{select===3? <LastSelected width={25} height={25} fill={'red'} />:<Last width={25} height={25} fill={'red'} />}</View>
         <Text style={select===3? styles.footerTextSelected : styles.footerText}>Tarixçə </Text>
       </View>
-      </TouchableHighlight>
+      </TouchableHighlight> */}
       <TouchableHighlight underlayColor="transparent" onPress={()=>{navigation.navigate("ProfileScreen")}}>
       <View style={styles.items}>
         <View style={styles.svg}>{select===5? <ProfileSelected width={25} height={25} fill={'red'} />:<Profile width={25} height={25} fill={'red'} />}</View>
